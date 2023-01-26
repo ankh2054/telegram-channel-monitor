@@ -1,7 +1,6 @@
 # TG monitor
 
 Monitors a telegram channel for a specific word and notifies you using pushover. 
-It was created to monitor the Telos Kickbot channel for any messages that contain a BP name.
 
 ## Requirements
 
@@ -43,7 +42,20 @@ The config file requires the following parameters:
 - **pushover_app_key** = Pushover app key for sending messages.
 
 
-### 5) Create and register as service. 
+
+### 5) Running for the first time to save session details
+
+Note that during the first run Telegram will request you to provide register mobile number and your telegram password to authenticate. After the initial run the session data is saved.
+
+- Copy telegram session file telegramusername.session to /usr/local/bin/
+- For example:
+
+```
+cp ankh2054.session /usr/local/bin/ 
+```
+
+
+### 6) Create and register as service. 
 
 - mkdir -p /usr/lib/systemd/system 
 - Add the contents below to file --> /usr/lib/systemd/system/tg-monitor.service
@@ -72,7 +84,13 @@ sudo systemctl start tg-monitor
 
 ```
 
-### 6) Configuring high-priority alerts 
+### 6) Running for the first time
+
+Note that during the first run you should 
+
+
+
+### 7) Configuring high-priority alerts 
 
 - The pushover app allows you to overide the **Do Not Disturb mode** on your phone. 
 - Within the python script you can set which alerts are considered high-priority. 

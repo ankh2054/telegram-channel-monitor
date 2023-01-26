@@ -30,6 +30,7 @@ share/python-wheels/
 MANIFEST
 backendconfig.py
 config.ini
+*.session
 
 
 # PyInstaller

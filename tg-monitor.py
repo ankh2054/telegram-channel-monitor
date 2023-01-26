@@ -60,7 +60,6 @@ async def newMessageListener(event):
 
     bpFiltered = re.findall(bpname,newMessage)
     if len(bpFiltered) != 0:
-        print("It has worked")
         pushover(newMessage,0)
     if len(bpFiltered) == 0:
         print("regex not working")
